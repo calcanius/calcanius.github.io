@@ -44,6 +44,10 @@ body {
 	min-height: 100vh;
 }
 
+.Main {
+	position: relative;
+}
+
 ::-webkit-scrollbar {
 	background: rgba(black, 0.1);
 	width: 5px;
