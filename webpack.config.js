@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 const webpack = require("webpack");
 const _ = require("lodash");
 // Configs
@@ -95,6 +96,16 @@ module.exports = env => ({
 		]
 	},
 	plugins: [
+		// Copies static GitHub Pages support files (CNAME, 404 fallback) into the build.
+		{ apply(compiler) {
+			compiler.hooks.afterEmit.tap("CopyStaticFiles", () => {
+				for (const file of ["CNAME", "404.html", "robots.txt"])
+					fs.copyFileSync(
+						path.join(__dirname, "public", file),
+						path.join(compiler.outputPath ?? compiler.options.output.path, file)
+					);
+			});
+		}},
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: path.join(__dirname, "public/index.html"),

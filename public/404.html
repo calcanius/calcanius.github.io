@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cal's Creations</title>
+<script>
+	// SPA fallback: GitHub Pages has no rewrite rules, so for unknown paths
+	// (e.g. /links) bounce to the app root, passing the intended path along.
+	var path = window.location.pathname.replace(/^.*\//, "");
+	var query = window.location.search;
+	window.location.replace("/#" + path + query);
+</script>
+</head>
+<body>
+Redirecting you to Cal's Creations... If nothing happens, <a href="/">click here</a>.
+</body>
+</html>

@@ -9,6 +9,15 @@ import AnnouncePage from "./Pages/AnnouncePage";
 import HomePage from "./Pages/Home";
 import LinksPage from "./Pages/LinksPage";
 
+// Handle SPA fallback redirects (e.g. from 404.html on GitHub Pages):
+// a "#/links"-style hash means the user was bounced from that path.
+(() => {
+	const [, redirect] = window.location.hash.match(/^#([^#?]+)/) ?? [];
+	if (redirect && redirect !== "/") {
+		history.replaceState({}, "", redirect);
+	}
+})();
+
 window.addEventListener("popstate", () => {
 	App.forceUpdate?.();
 	PageElement.forceUpdate?.();
