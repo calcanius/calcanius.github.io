@@ -10,20 +10,7 @@ export default function PageFooter() {
 			<div className="Flex">
 				<div className="LeftSections">
 					<div className="HeadSection FlexCenter">
-						<div
-							className="Logo"
-							style={{
-								backgroundColor: "#85A6BE",
-								WebkitMaskImage: `url(${Icon})`,
-								maskImage: `url(${Icon})`,
-								WebkitMaskSize: "cover",
-								maskSize: "cover",
-								WebkitMaskRepeat: "no-repeat",
-								maskRepeat: "no-repeat",
-								WebkitMaskPosition: "center",
-								maskPosition: "center"
-							}}
-						/>
+						<img className="Logo" src={Icon} alt="Logo" />
 
 						<div>
 							site originally made by RIVÆROS with <img src={Heart} alt="♥" width={15} height={15} />
