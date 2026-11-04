@@ -1,0 +1,74 @@
+@import "./Variables.scss";
+
+:root {
+	--primary-color: #3d96da;
+	--secondary-color: #3d96da;
+
+	--primary-bg: #3a4455;
+	--secondary-bg: #4a576d;
+	--tertiary-bg: #54637d;
+
+	--primary-border-radius: 0;
+	--secondary-border-radius: 0;
+	--txt-color: #ced7de;
+
+	--cf-purple: #ab8cd4;
+}
+
+html {
+	background-color: $primaryBG;
+	color: var(--txt-color);
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	margin: 0;
+}
+
+// I hate Firefox
+* {
+	scrollbar-width: thin;
+	scrollbar-color: $primaryColor rgba(black, 0.1);
+}
+
+.App,
+.Main {
+	min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+	background: rgba(black, 0.1);
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $primaryColor;
+	border-radius: 10px;
+}
+
+a:not(.LinkWrapper) {
+	color: $primaryColor;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+// Some boilerplate stuff for the lazies.
+
+.Flex {
+	display: flex;
+}
+
+.FlexCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

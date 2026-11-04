@@ -1,0 +1,239 @@
+@import "../Variables.scss";
+
+.HomePage {
+	display: flex;
+	flex-direction: column;
+
+	padding: 7vw;
+	overflow: hidden;
+
+	position: relative;
+
+	> .HeroSection {
+		height: 120vh;
+
+		.UserSection {
+			align-items: center;
+
+			.Name {
+				margin-left: 20px;
+			}
+		}
+
+		.Icon {
+			width: 80px;
+			height: 80px;
+
+			border-radius: 100%;
+
+			object-position: center;
+			object-fit: cover;
+
+			background-color: rgba(black, 0.25);
+		}
+
+		.ChatBubble {
+			position: relative;
+			height: max-content;
+
+			margin-left: -20px;
+			margin-top: 10px;
+
+			transform-origin: 50px top;
+
+			animation-name: ChatBubbleSpawn;
+			animation-duration: 400ms;
+			animation-delay: 600ms;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+
+			color: rgba(white, 0.8);
+
+			a {
+				position: relative;
+				display: inline-block;
+
+				color: #3cd79e;
+				font-weight: bolder;
+				margin-left: 5px;
+
+				&::after {
+					content: "";
+
+					position: absolute;
+					left: 0;
+					bottom: -4px;
+					width: 0;
+
+					border-bottom: 2px solid currentColor;
+					transition: width $ft;
+				}
+
+				&:hover:after {
+					width: 100%;
+				}
+			}
+
+			&:nth-child(2) {
+				margin-top: 20px;
+
+				&::after {
+					content: "";
+
+					position: absolute;
+					left: 50px;
+					top: -9px;
+
+					width: 20px;
+					height: 20px;
+
+					background-color: $primaryColor;
+					border-radius: 4px;
+
+					transform: rotateZ(45deg);
+				}
+			}
+
+			&:nth-child(3) {
+				animation-delay: 2000ms;
+			}
+
+			&:nth-child(4) {
+				animation-delay: 3500ms;
+			}
+
+			&:nth-child(5) {
+				animation-delay: 5000ms;
+			}
+
+			&:nth-child(6) {
+				animation-delay: 6500ms;
+			}
+
+			@keyframes ChatBubbleSpawn {
+				0% {
+					transform: scale(0);
+					opacity: 0;
+				}
+
+				30% {
+					transform: scale(1.2);
+					opacity: 1;
+				}
+
+				70% {
+					transform: scale(0.9);
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+		}
+
+		h3 {
+			position: relative;
+			margin: 0;
+
+			margin-left: 20px;
+			padding: 15px;
+			border-radius: 4px;
+
+			font-size: 1em;
+
+			background-color: $primaryColor;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			> svg {
+				width: 30px;
+				height: 30px;
+
+				margin: 0 10px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			&.Typing {
+				opacity: 0;
+
+				transition: opacity $t;
+			}
+		}
+
+		.ChatBubble.IsTyping > .Typing {
+			opacity: 1;
+		}
+	}
+
+	.Section {
+		position: relative;
+
+		margin-bottom: 200px;
+
+		&,
+		> .Background,
+		> .RightSection {
+			transition: transform 150ms linear;
+		}
+
+		h1 {
+			align-items: center;
+
+			> svg {
+				width: 35px;
+				height: 35px;
+
+				margin-right: 10px;
+			}
+		}
+
+		.Background {
+			width: 20vw;
+			height: 0%;
+			border-radius: 4px;
+			flex-shrink: 0;
+		}
+
+		.RightSection {
+			margin: 0 60px;
+
+			> h4 {
+				font-weight: normal;
+
+				> b {
+					color: $primaryColor;
+				}
+			}
+		}
+
+		&:nth-child(odd) {
+			direction: rtl;
+
+			.RightSection {
+				direction: ltr;
+			}
+		}
+
+		@media screen and (max-width: 900px) {
+			flex-direction: column;
+
+			.Background {
+				width: auto;
+				padding: 0 10vw;
+			}
+
+			.RightSection {
+				margin: 0;
+			}
+		}
+	}
+}

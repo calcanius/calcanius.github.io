@@ -1,0 +1,63 @@
+.AnnouncePage {
+	min-height: 100vh;
+	text-align: center;
+
+	flex-direction: column;
+
+		.Flex {
+			gap: 15px;
+		}
+
+		.WhName {
+			width: 200px;
+		}
+
+	.Button {
+		background: var(--primary-color);
+		color: white;
+
+		padding: 10px 30px;
+		border-radius: 100px;
+		font-weight: bolder;
+
+		cursor: pointer;
+
+		&.AnnounceButton {
+			margin-top: 20px;
+		}
+	}
+
+	> .WebhooksList {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	> h2 {
+		text-align: left;
+
+		width: 500px;
+		max-width: 80vw;
+		margin-bottom: 10px;
+
+		font-size: 1.25em;
+	}
+
+	input {
+		width: 500px;
+		max-width: 80vw;
+
+		border: none;
+		outline: none;
+
+		background: var(--secondary-bg);
+		color: var(--txt-color);
+
+		padding: 10px 15px;
+		border-radius: 100px;
+
+		&::placeholder {
+			color: var(--txt-color);
+			opacity: 0.75;
+		}
+	}
+}

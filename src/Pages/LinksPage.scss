@@ -1,0 +1,12 @@
+@import "../Variables.scss";
+
+.LinksPage {
+	> .HeroSection {
+		height: max-content;
+	}
+
+	iframe {
+		border: none;
+		outline: none;
+	}
+}
