@@ -1,7 +1,7 @@
 import React from "react";
 import "./PageFooter.scss";
 
-import Icon from "../../Assets/icon50x50.png";
+import Icon from "../../Assets/icon.png";
 import Heart from "../../Assets/TwemojiHeart.svg";
 
 export default function PageFooter() {
