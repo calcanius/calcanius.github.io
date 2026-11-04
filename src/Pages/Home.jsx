@@ -76,7 +76,7 @@ export default function HomePage() {
 				</ChatBubble>
 
 				<ChatBubble index={5}>
-					Or see my links page <LinkWrapper href="/links">here</LinkWrapper>.
+					<span>Or see my links page <LinkWrapper href="/links">here</LinkWrapper>.</span>
 				</ChatBubble>
 			</div>
 

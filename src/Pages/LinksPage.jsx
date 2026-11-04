@@ -87,7 +87,7 @@ export default function LinksPage() {
 				</ChatBubble>
 
 				<ChatBubble index={6}>
-					And if you're done here, you can return to the <LinkWrapper href="/">home page</LinkWrapper>.
+					<span>And if you're done here, you can return to the <LinkWrapper href="/">home page</LinkWrapper>.</span>
 				</ChatBubble>
 			</div>
 		</div>
